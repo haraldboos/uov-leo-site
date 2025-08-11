@@ -14,6 +14,11 @@
                 <a href="{{ url('/') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">Home</a>
                 <a href="{{ url('/about') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">About</a>
                 <a href="{{ url('/projects') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">Projects</a>
+                <a href="{{ url('/events') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">Events</a>
+                <a href="{{ url('/members/2023-24') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">Members</a>
+
+                <a href="https://drive.google.com/file/d/1BwaBWIREsqru-6LjA_x0aOq2VKpPZDah/view" class="text-gray-700 font-semibold hover:text-yellow-500 transition">E-Directory</a>
+
                 <a href="{{ url('/contact') }}" class="text-gray-700 font-semibold hover:text-yellow-500 transition">Contact</a>
                 <a href="#" class="text-sm bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">Join Us</a>
             </div>
@@ -41,7 +46,11 @@
         <a href="{{ url('/') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Home</a>
         <a href="{{ url('/about') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">About</a>
         <a href="{{ url('/projects') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Projects</a>
+        <a href="{{ url('/events') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Events</a>
+        <a href="{{ url('/members/2023-24') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Members</a>
         <a href="{{ url('/contact') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Contact</a>
+                        <a href="https://drive.google.com/file/d/1BwaBWIREsqru-6LjA_x0aOq2VKpPZDah/view" class="block text-gray-700 hover:text-yellow-500 font-semibold">E-Directory</a>
+
         <a href="#" class="block mt-2 text-sm bg-yellow-500 text-white px-4 py-2 rounded text-center hover:bg-yellow-600">Join Us</a>
     </div>
 </nav>

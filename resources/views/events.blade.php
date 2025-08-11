@@ -12,7 +12,7 @@
 
     <!-- Content -->
     <div class="relative z-10 max-w-5xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-white mb-6">Our Projects</h2>
+        <h2 class="text-4xl font-bold text-white mb-6">Who We Are</h2>
 
         <div class="flex flex-col md:flex-row items-center gap-8 md:text-left">
             <div>
@@ -26,6 +26,7 @@
     These projects are the heartbeat of our club—where leadership is learned, friendships are forged, and impact is felt. 💛 
     Whether you're contributing your skills, sharing your story, or simply showing up, you're part of a movement that builds, uplifts, and inspires.
 </p>
+
             </div>
         </div>
     </div>
@@ -34,11 +35,11 @@
 
 <section class="bg-yellow-50 py-16 px-6 sm:px-10 lg:px-20 bg-gray-50">
     <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Our Projects</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Our Events</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            @foreach ($projects as $project)
-            <a href="{{ route('insprojects.show', $project->id) }}">
+            @foreach ($events as $project)
+            <a href="{{ route('insevent.show', $project->id) }}">
                 <div class="w-80 mx-auto transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
                     <div class="rounded-xl shadow hover:shadow-2xl overflow-hidden bg-white">
                         <img src="{{ asset('storage/' . $project->main_photo) }}"
@@ -57,7 +58,7 @@
 
         <!-- Pagination -->
         <div class="mt-12 flex justify-center">
-{{ $projects->links() }}
+{{ $events->links() }}
         </div>
     </div>
 </section>

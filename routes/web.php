@@ -7,14 +7,16 @@ use App\Models\Announsment;
 use App\Models\Events;
 use App\Models\Members;
 use App\Models\projects;
+use App\Models\Slide;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $announcements = Announsment::latest()->take(6)->get();
     $projects = Projects::latest()->take(6)->get();
     $events = Events::latest()->take(6)->get();
+$slides = Slide::where('status', true)->pluck('image_path'); // Get full objects
 
-    return view('welcome',compact('announcements','projects','events'));
+    return view('welcome',compact('announcements','projects','events','slides'));
 })->name('home');
 Route::get('/members/{selectedYear?}', function ($selectedYear='2023/34') {
     // $selectedYear = ;
@@ -35,16 +37,43 @@ Route::get('/members/{selectedYear?}', function ($selectedYear='2023/34') {
 
     return view('members',compact('executiveMembers','boardMembers','selectedYear','years'));
 })->name('members');
-Route::get('/project', function () {
-    return view('projects');
+
+Route::get('/projects', function () {
+        $projects = Projects::latest()->paginate(6);
+
+    return view('projects',compact('projects'));
+
+})->name('projects');
+
+Route::get('/events', function () {
+        $events = Events::latest()->paginate(6);
+
+    return view('events',compact('events'));
+
 })->name('projects');
 
 Route::get('/projects/{id}', function ($id) {
-    $project = projects::findOrFail($id); // Finds by ID and throws 404 if not found
+    $project = Projects::findOrFail($id); 
     return view('insprojects', compact('project'));
 })->name('insprojects.show');
 
+Route::get('/events/{id}', function ($id) {
+    $event = Events::findOrFail($id); 
+    return view('insevents', compact('event'));
+})->name('insevent.show');
 
+
+Route::get('/anous', function () {
+    $announcements = Announsment::orderBy('date_created', 'asc')->paginate(10); 
+    return view('anunusments', compact('announcements'));
+
+})->name('all.anon.show');
+
+Route::get('/anous/{id}', function ($id) {
+    $announsment = Announsment::findOrFail($id); 
+    return view('insanunusment', compact('announsment'));
+
+})->name('insanno.show');
 
 
 require __DIR__.'/auth.php';

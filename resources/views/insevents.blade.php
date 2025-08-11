@@ -1,40 +1,47 @@
 @extends('layouts.app')
 
-@section('title', 'Members Page')
+@section('title', 'Event Page')
 
 @section('content')
-<section class="py-16 px-6 sm:px-10 lg:px-20 bg-yellow-50 text-white">
-    <div class="max-w-5xl mx-auto">
+<section class="py-16 px-4 sm:px-6 lg:px-24 bg-yellow-50 text-gray-900">
+    <div class="max-w-7xl mx-auto">
 
         <!-- Title & Date -->
-        <h1 class="text-4xl font-bold text-yellow-500 mb-2">{{ $project->title }}</h1>
-        <p class="text-sm text-gray-400 mb-6">
-            {{ $project->location ? $project->location . ' • ' : '' }}
-            {{ \Carbon\Carbon::parse($project->project_date)->format('F d, Y') }}
-        </p>
+        <header class="mb-6">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-yellow-600 leading-tight break-words">
+                {{ $event->title }}
+            </h1>
+     <p class="text-xs sm:text-sm text-gray-500 mt-2">
+    {{ optional($event->event_date)->format('F d, Y') }}
+</p>
+        </header>
 
         <!-- Main Photo -->
-        @if($project->main_photo)
-            <img src="{{ asset('storage/' . $project->main_photo) }}"
-                 alt="{{ $project->title }}"
-                 class="w-full h-full object-cover rounded-xl shadow mb-8">
+        @if($event->main_photo)
+            <div class="mb-8">
+                <img src="{{ asset('storage/' . $event->main_photo) }}"
+                     alt="{{ $event->title }}"
+                     class="w-full max-h-[70vh] object-cover rounded-xl shadow-lg">
+            </div>
         @endif
 
         <!-- Description -->
-        <p class="text-lg leading-relaxed text-gray-800 font-serif mb-8">
-            {{ $project->description }}
-        </p>
+        <article class="mb-10">
+            <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-800 whitespace-pre-line">
+                {{ $event->description }}
+            </p>
+        </article>
 
-        <!-- Gallery with Lightbox -->
-        @if($project->photos && is_array($project->photos))
+        <!-- Gallery -->
+        @if($event->photos && is_array($event->photos))
             <div x-data="{ selected: null }" @keydown.escape.window="selected = null">
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-                    @foreach($project->photos as $photo)
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    @foreach($event->photos as $photo)
                         <button @click="selected = '{{ asset('storage/' . $photo) }}'"
-                                class="group overflow-hidden rounded-lg shadow hover:shadow-xl transition focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                                class="group overflow-hidden rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition">
                             <img src="{{ asset('storage/' . $photo) }}"
-                                 alt="Gallery Image"
-                                 class="w-full h-48 object-cover group-hover:scale-105 transform transition duration-300">
+                                 alt="Event Image"
+                                 class="w-full h-44 sm:h-48 object-cover transform group-hover:scale-105 transition duration-300 ease-in-out">
                         </button>
                     @endforeach
                 </div>
@@ -51,6 +58,7 @@
                      @click.self="selected = null"
                      x-cloak>
                     <div class="relative w-full max-w-4xl">
+                        <!-- Minimalist "×" Close Button -->
                         <button @click="selected = null"
                                 class="absolute top-4 right-4 text-white text-3xl sm:text-4xl hover:text-yellow-300 transition focus:outline-none focus:ring-2 focus:ring-yellow-400"
                                 aria-label="Close lightbox">
@@ -62,14 +70,6 @@
                     </div>
                 </div>
             </div>
-        @endif
-
-        <!-- Facebook Link -->
-        @if($project->facebook_link)
-            <a href="{{ $project->facebook_link }}" target="_blank"
-               class="inline-block px-6 py-2 bg-yellow-600 hover:bg-yellow-700 text-white font-semibold rounded-full transition">
-                View on Facebook
-            </a>
         @endif
 
     </div>

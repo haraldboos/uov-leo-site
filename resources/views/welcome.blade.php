@@ -3,28 +3,55 @@
 @section('title', 'Home Page')
 
 @section('content')
-   <x-home_slider :slides="['home.jpg', 'home.jpg', 'home.jpg']" />
+    {{-- Slider Section --}}
+    <x-home_slider :slides="$slides" data-aos="fade" data-aos-duration="1000"/>
 
-<div class="    ">
-    <h1 class="text-5xl font-extrabold text-center py-10">See Our Projects</h1>
-    <x-projectscrousole :projects='$projects'/>
+    {{-- Projects Section --}}
 
-   </div>
+<div class="py-12" data-aos="zoom-in" data-aos-delay="200">        <x-count_show />
+    </div>
 
-   <x-about_us />
 
-   <x-vision_mission />
-   <x-count_show />
 
-   <div >
-      <x-announsment :announcements='$announcements'/>
-   </div>
-   
-   
-<div class="my-6  ">
-    <h1 class="text-5xl bg-[#36151e] font-extrabold text-center mb-4">See Our events</h1>
-      {{-- <h1>see our projects</h1> --}}
-<x-eventcrousole :events='$events'/>
 
+<div class="py-12 px-4 sm:px-6 lg:px-20" data-aos="fade-up" data-aos-duration="800">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-6 tracking-tight text-[#fbbf24] drop-shadow-md">
+            See Our Projects
+        </h1>
+        <x-projectscrousole :projects="$projects" data-aos="zoom-in-up" data-aos-delay="200" />
+    </div>
+
+    {{-- About Us --}}
+    <x-about_us data-aos="fade-right" data-aos-duration="700" />
+
+    {{-- Vision & Mission --}}
+    <x-vision_mission  data-aos="fade-left" data-aos-duration="700" />
+
+    {{-- Count Section --}}
+
+
+    {{-- Announcements Section --}}
+    <div class="py-12 px-4 sm:px-6 lg:px-20  text-[#1f2937]" data-aos="fade-up" data-aos-duration="800">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-6 "  data-aos="fade-down" data-aos-delay="100">
+            Announcements
+        </h1>
+        <x-announsment :announcements="$announcements" data-aos="zoom-in" data-aos-delay="200" />
 </div>
-   @endsection
+        <div class="mt-6 text-center">
+            <a href="{{ route('all.anon.show') }}"
+               class="inline-block px-5 py-2 text-sm font-semibold text-[#3b131f] bg-[#fbbf24] rounded-full hover:bg-[#e6aa18] transition duration-300">
+                See All Announcements
+            </a>
+        </div>
+    </div>
+
+    {{-- Events Section --}}
+    <div class="py-12 px-4 sm:px-6 lg:px-20   " data-aos="fade-up" data-aos-duration="800">
+<h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-6 tracking-tight text-[#fbbf24] drop-shadow-md" data-aos="fade-down" data-aos-delay="100">
+                See Our Events
+        </h1>
+        <div class=" mx-auto"data-aos="zoom-in-up" data-aos-delay="200">
+            <x-eventcrousole :events="$events" />
+        </div>
+    </div>
+@endsection

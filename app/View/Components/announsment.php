@@ -12,9 +12,9 @@ class announsment extends Component
      * Create a new component instance.
      */
     public $announcements;    // $announunsment =  
-    public function __construct($announunsments)
+    public function __construct($announcements)
     {
-        $this->announcements = $announunsments ;      //
+        $this->announcements = $announcements ;      //
         //    $this->announcements = \App\Models\Announsment::latest()->take(6)->get(); 
     }
 

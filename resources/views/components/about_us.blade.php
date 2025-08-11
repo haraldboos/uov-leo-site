@@ -6,7 +6,7 @@
         <div class="flex flex-col md:flex-row items-center gap-8 md:text-left">
             <!-- Text Column -->
               <div class="h-40">
-                <img src="{{ asset('storage/leo-logo-none.jpeg') }}" alt="Leo Club Logo" class="h-40 max-w-xs mx-auto md:mx-0 rounded-full"/>
+                <img src="{{ asset('storage/leo-logo-none.png') }}" alt="Leo Club Logo" class="h-40 max-w-xs mx-auto md:mx-0 rounded-full"/>
             </div>
             <div class="">
                 <p class="text-lg leading-relaxed">

@@ -1,6 +1,7 @@
-    <div class="mx-auto container">
-    <div 
-            x-data="{ members: 0, projects: 0 ,years : 0}"
+<div class="py-12 px-4 sm:px-6 lg:px-20 ">
+    <div class="mx-auto max-w-6xl">
+        <div 
+            x-data="{ members: 0, projects: 0 , years: 0 }"
             x-init="
                 const animate = (target, step, delay, value) => {
                     const timer = setInterval(() => {
@@ -12,26 +13,31 @@
                 animate(8, () => projects++, 150, () => projects);
                 animate(3, () => years++, 150, () => years);
             "
-            class="grid grid-cols-1  sm:grid-cols-3 gap-6 text-center"
+            class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center"
         >
-            <div class="bg-white rounded-lg shadow p-6">
-                <div class="text-3xl font-bold text-yellow-700">
+            {{-- Members --}}
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+                <div class="text-5xl font-extrabold text-[#fbbf24] tracking-tight">
                     <span x-text="members"></span>+
                 </div>
-                <p class="mt-2 text-gray-700 font-medium">Dedicated Members</p>
-            </div>
-         <div class="bg-white rounded-lg shadow p-6">
-                <div class="text-3xl font-bold text-yellow-700">
-                    <span x-text="years"></span>
-                </div>
-                <p class="mt-2 text-gray-700 font-medium">Years as leos</p>
+                <p class="mt-4 text-gray-800 text-lg font-medium">Dedicated Members</p>
             </div>
 
-            <div class="bg-white rounded-lg shadow p-6">
-                <div class="text-3xl font-bold text-yellow-700">
-                    <span x-text="projects"></span>
+            {{-- Years --}}
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+                <div class="text-5xl font-extrabold text-[#fbbf24] tracking-tight">
+                    <span x-text="years"></span>
                 </div>
-                <p class="mt-2 text-gray-700 font-medium">Projects for 2024/25</p>
+                <p class="mt-4 text-gray-800 text-lg font-medium">Years as Leos</p>
+            </div>
+
+            {{-- Projects --}}
+            <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
+                <div class="text-5xl font-extrabold text-[#fbbf24] tracking-tight">
+                    <span x-text="projects"></span>+
+                </div>
+                <p class="mt-4 text-gray-800 text-lg font-medium">Projects for 2024/25</p>
             </div>
         </div>
     </div>
+</div>
