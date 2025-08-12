@@ -14,15 +14,15 @@ class AdminUserSeeder extends Seeder
      */
     public function run(): void
     {
+
         //
         User::updateOrCreate(
-          ['email' => 'leoclubuov@vau.ac.lk'],
-            [
-                'name' => 'Leo Club Admin',
-                'password' => Hash::make('adminleoadmin'),
-                'is_admin' => true,
-            ]
-
+    ['email' => env('LEO_ADMIN_EMAIL')],
+    [
+        'name' => env('LEO_ADMIN_NAME'),
+        'password' => Hash::make(env('LEO_ADMIN_PASSWORD')),
+        'is_admin' => true,
+    ]
             );
     }
 }
