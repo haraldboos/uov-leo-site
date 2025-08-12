@@ -27,10 +27,8 @@
     {{-- Vision & Mission --}}
     <x-vision_mission  data-aos="fade-left" data-aos-duration="700" />
 
-    {{-- Count Section --}}
 
 
-    {{-- Announcements Section --}}
     <div class="py-12 px-4 sm:px-6 lg:px-20  text-[#1f2937]" data-aos="fade-up" data-aos-duration="800">
         <h1 class="text-4xl sm:text-5xl font-extrabold text-center mb-6 "  data-aos="fade-down" data-aos-delay="100">
             Announcements

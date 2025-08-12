@@ -62,9 +62,15 @@
     </div>
 
     <!-- 🪄 Hover-only overlay with name -->
-    <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex justify-center items-center text-white text-center px-4">
-        <h3 class="text-lg font-bold uppercase tracking-wide">{{ $member->name }}</h3>
-    </div>
+   <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-80 transition-opacity duration-300 flex flex-col justify-center items-center text-white text-center px-4 space-y-2">
+    <h3 class="text-lg font-bold uppercase tracking-wide">{{ $member->name }}</h3>
+    @if($member->email)
+        <p class="text-sm">{{ $member->email }}</p>
+    @endif
+    @if($member->phone)
+        <p class="text-sm">{{ $member->phone }}</p>
+    @endif
+</div>
 </div>
 
         @endforeach
