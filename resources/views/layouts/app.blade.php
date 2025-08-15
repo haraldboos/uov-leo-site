@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    
+        @yield('meta')
     <meta charset="UTF-8">
     <meta charset="utf-8" />    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> 
@@ -40,25 +42,33 @@
         @yield('content')
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center ">
-        <div class="container mx-auto space-y-2">
-            <h2 class="text-lg font-semibold">Leo Club of University of Vavuniya</h2>
-            <div class="flex justify-center space-x-6 text-sm">
-                <a href="https://facebook.com" target="_blank" class="hover:text-blue-400">
-                    <i class="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="https://instagram.com" target="_blank" class="hover:text-pink-400">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="mailto:leoclub@vau.ac.lk" class="hover:text-yellow-300">
-                    <i class="fas fa-envelope"></i> Email Us
-                </a>
-            </div>
-            <p class="text-xs">University of Vavuniya, Sri Lanka</p>
-            <p class="text-xs">&copy; {{ date('Y') }} Leo Club | All rights reserved.</p>
+<footer class="bg-gray-800 text-white text-center py-6">
+    <div class="container mx-auto space-y-3">
+        <h2 class="text-lg font-semibold">Leo Club of University of Vavuniya</h2>
+
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
+            <a href="https://www.facebook.com/profile.php?id=61553609166490&mibextid=ZbWKwL" target="_blank" class="hover:text-blue-400 flex items-center gap-1">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/uov_leos/" target="_blank" class="hover:text-pink-400 flex items-center gap-1">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/leo-club-of-university-of-vavuniya-7544a32a0/" target="_blank" class="hover:text-blue-300 flex items-center gap-1">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://www.tiktok.com/@uov_leos?_t=8hSe" target="_blank" class="hover:text-pink-300 flex items-center gap-1">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="mailto:leoclubuov@vau.ac.lk" class="hover:text-yellow-300 flex items-center gap-1">
+                <i class="fas fa-envelope"></i> Email Us
+            </a>
         </div>
-    </footer>
+
+        <p class="text-xs">University of Vavuniya, Sri Lanka</p>
+        <p class="text-xs">&copy; {{ date('Y') }} Leo Club | All rights reserved.</p>
+    </div>
+</footer>
+
 
     <script>
         window.addEventListener('load', () => {

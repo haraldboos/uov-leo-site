@@ -22,12 +22,12 @@ Route::get('/members/{selectedYear?}', function ($selectedYear='2023/34') {
     // $selectedYear = ;
     $executiveMembers = Members::where('category', 'Executive Committee')
                           ->where('year', $selectedYear)
-                          ->orderBy('order_number')
+                          ->orderBy('order_number','asc')
                           ->get();
 
     $boardMembers = Members::where('category', 'Board of Directors')
                       ->where('year', $selectedYear)
-                      ->orderBy('order_number')
+                      ->orderBy('order_number','asc')
                       ->get();
     $years = Members::select('year')
                 ->distinct()
@@ -74,6 +74,11 @@ Route::get('/anous/{id}', function ($id) {
     return view('insanunusment', compact('announsment'));
 
 })->name('insanno.show');
+
+
+Route::get('/contact',function (){
+    return view('contact_us');
+});
 
 
 require __DIR__.'/auth.php';

@@ -10,7 +10,7 @@
                     }, delay);
                 };
                 animate(200, () => members++, 10, () => members);
-                animate(8, () => projects++, 150, () => projects);
+                animate(20, () => projects++, 150, () => projects);
                 animate(3, () => years++, 150, () => years);
             "
             class="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center"

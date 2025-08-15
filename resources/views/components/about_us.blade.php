@@ -1,4 +1,4 @@
-<section class="py-16 px-6 sm:px-10 lg:px-20 text-white bg-cover bg-center bg-no-repeat"
+<section id="about" class="py-16 px-6 sm:px-10 lg:px-20 text-white bg-cover bg-center bg-no-repeat"
          style="background-image: url('{{ asset('storage/banr.png') }}'); background-attachment: fixed;">
     <div class="max-w-5xl mx-auto text-center">
         <h2 class="text-4xl font-bold text-white mb-6">Who We Are</h2>

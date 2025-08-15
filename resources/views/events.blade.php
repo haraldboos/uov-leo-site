@@ -5,7 +5,7 @@
 @section('content')
 
 <section class="relative py-16 px-6 sm:px-10 lg:px-20 text-white bg-cover bg-center bg-no-repeat"
-         style="background-image: url('{{ asset('storage/project_banner.jpg') }}'); background-attachment: fixed;">
+         style="background-image: url('{{ asset('storage/event.jpg') }}'); background-attachment: fixed;">
     
     <!-- Black Overlay -->
     <div class="absolute inset-0 bg-black opacity-60"></div>
