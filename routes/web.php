@@ -5,6 +5,7 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Models\Announsment;
 use App\Models\Events;
+use App\Models\Newsletter;
 use App\Models\Members;
 use App\Models\projects;
 use App\Models\Slide;
@@ -75,6 +76,15 @@ Route::get('/anous/{id}', function ($id) {
 
 })->name('insanno.show');
 
+Route::get('/news-letters',function (){
+        $newsletters = Newsletter::orderBy('created_at', 'desc')->get();
+    return view('newsleters',compact('newsletters'));
+});
+
+Route::get('/news-letters/{slug}', function ($slug) {
+    $newsletter = Newsletter::where('slug', $slug)->firstOrFail();
+    return view('newsletter', compact('newsletter'));
+});
 
 Route::get('/contact',function (){
     return view('contact_us');
