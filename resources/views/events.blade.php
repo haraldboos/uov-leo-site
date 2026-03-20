@@ -48,7 +48,7 @@
                         <div class="p-4 space-y-1">
                             <h3 class="text-lg font-bold text-gray-800">{{ $project->title }}</h3>
                             <p class="text-sm text-gray-600">{{ $project->location }}</p>
-                            <p class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($project->project_date)->format('M d, Y') }}</p>
+                            <p class="text-sm text-gray-500">{{ \Carbon\Carbon::parse($project->event_date)->format('M d, Y') }}</p>
                         </div>
                     </div>
                 </div>

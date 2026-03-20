@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $announcements = Announsment::latest()->take(6)->get();
-    $projects = Projects::latest()->take(6)->get();
-    $events = Events::latest()->take(6)->get();
+  $projects = Projects::orderBy('project_date', 'desc')->take(6)->get();
+$events = Events::orderBy('event_date', 'desc')->take(6)->get();
+
 $slides = Slide::where('status', true)->pluck('image_path'); // Get full objects
 
     return view('welcome',compact('announcements','projects','events','slides'));
@@ -40,14 +41,14 @@ Route::get('/members/{selectedYear?}', function ($selectedYear='2023/34') {
 })->name('members');
 
 Route::get('/projects', function () {
-        $projects = Projects::latest()->paginate(6);
+        $projects = Projects::orderBy('project_date', 'desc')->paginate(6);
 
     return view('projects',compact('projects'));
 
 })->name('projects');
 
 Route::get('/events', function () {
-        $events = Events::latest()->paginate(6);
+        $events = Events::orderBy('event_date', 'desc')->paginate(6);
 
     return view('events',compact('events'));
 

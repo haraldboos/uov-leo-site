@@ -49,8 +49,9 @@
         <a href="{{ url('/projects') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Projects</a>
         <a href="{{ url('/events') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Events</a>
         <a href="{{ url('/members/25-26') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">Members</a>
-                        <a href="https://drive.google.com/file/d/1zklRzCLY_Tu5p-zK3T1ygKFScaE3bPQO/view" class="block text-gray-700 hover:text-yellow-500 font-semibold">E-Directory</a>
-        <a href="{{ url('/news-letters') }}" class="block mt-2 text-sm bg-yellow-500 text-white px-4 py-2 rounded text-center hover:bg-yellow-600">Contact</a>
+        <a href="{{ url('/news-letters') }}" class="block text-gray-700 hover:text-yellow-500 font-semibold">News letters</a>
+        <a href="https://drive.google.com/file/d/1zklRzCLY_Tu5p-zK3T1ygKFScaE3bPQO/view" class="block text-gray-700 hover:text-yellow-500 font-semibold">E-Directory</a>
+        <a href="{{ url('/contact') }}" class="block mt-2 text-sm bg-yellow-500 text-white px-4 py-2 rounded text-center hover:bg-yellow-600">Contact</a>
 
         <!--<a href="#" class="block mt-2 text-sm bg-yellow-500 text-white px-4 py-2 rounded text-center hover:bg-yellow-600">Join Us</a>-->
     </div>
